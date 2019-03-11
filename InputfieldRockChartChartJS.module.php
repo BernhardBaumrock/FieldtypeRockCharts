@@ -45,7 +45,10 @@ class InputfieldRockChartChartJS extends InputfieldRockMarkup {
    * @return void
    */
   public function ___render() {
-    return "<canvas class='RockChart RockChartChartJS'>Loading Chart...</canvas>".
+    return 
+      "<div class='RockChartWrapper' style='position:relative'>". // see https://github.com/chartjs/Chart.js/issues/2958
+      "<canvas class='RockChart RockChartChartJS'>Loading Chart...</canvas>".
+      "</div>".
       "<script>$('#Inputfield_{$this->name}').trigger('RockChart.init');</script>";
       
     // return "<div class='RockChart RockChartChartJS'>Loading Chart...</div>".
